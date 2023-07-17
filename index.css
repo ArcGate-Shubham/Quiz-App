@@ -1,0 +1,59 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: rgb(68, 111, 123);
+}
+
+.container {
+    height: 400px;
+    width: 600px;
+    border-radius: 2px;
+    margin-top: 20px;
+    background-color: rgb(248, 246, 242);
+    margin-left: 630px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.col {
+    text-align: justify;
+    padding: 18px;
+    width: 95%;
+}
+
+.submitbtn {
+    width: 30%;
+    background-color: rgb(131, 111, 67);
+    transition: 0.5s;
+    color: white;
+    outline: none;
+    border: none;
+    font-size: 25px;
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+    margin-left: 215px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+.submitbtn:hover {
+    background-color: rgb(34, 6, 53);
+}
+
+.box {
+    box-shadow: 0px -1px 1px grey;
+    width: 94%;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 210px;
+    font-size: 50px;
+    font-weight: lighter;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(46, 44, 54);
+}
+
+#questionBox {
+    font-size: 25px;
+    color: rgb(131, 111, 67);
+}
