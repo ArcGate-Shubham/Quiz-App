@@ -6,36 +6,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz-app</title>
     <link rel="stylesheet" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
 <body>
-    <h1>Quiz-App Project</h1>
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Quiz-App</h5>
+                </div>
+                <form action="">
+                    <div class="modal-body">
+                        <div class="col box">
+                            <input name="name" class="form-control" type="text" placeholder="Please Enter Name"
+                                id="name" required>
+                            <label for="name"></label>
+                            <span id="name_error"></span>
+                        </div>
+                        <div class="col box">
+                            <input name="email" class="form-control" type="email" placeholder="Please Enter Email"
+                                id="email" required>
+                            <label for="email"></label>
+                            <span id="email_error"></span>
+                        </div>
+                        <span id="name_email_error"></span>
+                    </div>
+                </form>
+                <div class="modal-footer">
+                    <button type="submit" id="submitBtn_data" onclick="Validate_username_and_email();"
+                        class="btn btn-primary" data-bs-dismiss="modal">Submit</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h4 id="showName"></h4>
+    <h1 class="headline">Quiz-App Project</h1>
     <div class="container">
         <div class="col">
             <h3 id="questionBox">
-                1)What is your name ?
             </h3>
         </div>
         <div class="col box">
             <input class="options" name="option" type="radio" id="option1" value="option1">
-            <label for="option1">1</label>
+            <label for="option1"></label>
         </div>
         <div class="col box">
             <input class="options" name="option" type="radio" id="option2" value="option2">
-            <label for="option2">2</label>
+            <label for="option2"></label>
         </div>
         <div class="col box">
             <input class="options" name="option" type="radio" id="option3" value="option3">
-            <label for="option3">3</label>
+            <label for="option3"></label>
         </div>
         <div class="col box">
             <input class="options" name="option" type="radio" id="option3" value="option4">
-            <label for="option4">4</label>
+            <label for="option4"></label>
         </div>
         <button class="submitbtn" onclick="submitAnswer();">Submit</button>
     </div>
 </body>
 <script src="index.js"></script>
-<script src="data.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script type="text/javascript">
+    $(window).on('load', function () {
+        $('#staticBackdrop').modal('show');
+    });
+</script>
 
 </html>
