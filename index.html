@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/parsleyjs@2.9.2/src/parsley.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/parsleyjs@2.9.2/dist/parsley.min.js"
+        integrity="sha256-pEdn/pJ2tyT37axbEIPkyUUfuG1yXR0+YV+h+jphem4=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -22,14 +29,14 @@
                 <form action="">
                     <div class="modal-body">
                         <div class="col box">
-                            <input name="name" class="form-control" type="text" placeholder="Please Enter Name"
-                                id="name" required>
+                            <input name="name" class="form-control" type="text" placeholder="Please Enter Username"
+                                id="name" required onkeyup="Validate_username_and_email();">
                             <label for="name"></label>
                             <span id="name_error"></span>
                         </div>
                         <div class="col box">
                             <input name="email" class="form-control" type="email" placeholder="Please Enter Email"
-                                id="email" required>
+                                id="email" required onkeyup="Validate_username_and_email();">
                             <label for="email"></label>
                             <span id="email_error"></span>
                         </div>
@@ -37,8 +44,9 @@
                     </div>
                 </form>
                 <div class="modal-footer">
-                    <button type="submit" id="submitBtn_data" onclick="Validate_username_and_email();"
-                        class="btn btn-primary" data-bs-dismiss="modal">Submit</button>
+                    <button type="submit" id="submitBtn_data" class="btn btn-primary" data-bs-dismiss="modal"
+                        aria-disabled="true" disabled="True"
+                        onclick="startQuiz(); reset_checked_radio_newuser();">Submit</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -46,13 +54,13 @@
     </div>
     <h4 id="showName"></h4>
     <h1 class="headline">Quiz-App Project</h1>
-    <div class="container">
+    <div class="container" style="display: none;">
         <div class="col">
             <h3 id="questionBox">
             </h3>
         </div>
         <div class="col box">
-            <input class="options" name="option" type="radio" id="option1" value="option1">
+            <input class="options" name="option" type="radio" id="option1" value="option1 ">
             <label for="option1"></label>
         </div>
         <div class="col box">
@@ -67,18 +75,20 @@
             <input class="options" name="option" type="radio" id="option3" value="option4">
             <label for="option4"></label>
         </div>
-        <button class="submitbtn" onclick="submitAnswer();">Submit</button>
+        <button class="submitbtn" onclick="submitAnswer();">Next</button>
+        <button class="backbtn" id="backbtn">Back</button>
     </div>
+    <table id="userTable" style="display: none;">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody id="userTableBody"></tbody>
+    </table>
 </body>
 <script src="index.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-<script type="text/javascript">
-    $(window).on('load', function () {
-        $('#staticBackdrop').modal('show');
-    });
-</script>
 
 </html>
